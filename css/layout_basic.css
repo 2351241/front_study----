@@ -15,7 +15,7 @@ header, nav, section, article, aside, footer {
 
 header{
     height : 100px;
-    background-color: blue;
+    background-color: red;
     /* width : 100%; 블록레벨 태그는 자동으로 옆으로 채우는 성격이 있어서 width */
 }
 
@@ -23,23 +23,34 @@ nav{
     background-color: yellow;
     width:80%;
     height:100px;
-    margin: 0px auto;
-    padding-top : 60px;
+    margin: 0px auto;   
+    padding-top : 20px;
 }
 
-ul{
+#topmenu{
     list-style : none;
     display:flex;
     background-color:skyblue;
     
 
+
 }
 
-ul > li {
-    background-color:aqua;
-    margin: 0px auto;
+#topmenu li {
+    background-color : aqua;
+    margin : 0px auto;
     width : 100px;
+    position : relative;
+}
 
+#topmenu > li:hover > ul{
+    display : block;
+    list-style: none;
+}
+
+#topmenu > li > ul{
+    position : absolute;
+    display : none;
 }
 
 div{
@@ -49,12 +60,12 @@ div{
 
 section{
     width:80%;
+    float:left;
 
 }
 
 article{
     background-color : beige;
-    width:30%;
 
 }
 
