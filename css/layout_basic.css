@@ -1,3 +1,10 @@
+*{
+    margin : 0px;
+    padding: 0px;
+    box-sizing : border-box;
+}
+
+
 header, nav, section, article, aside, footer {
    
     background-color : burlywood;
@@ -8,17 +15,31 @@ header, nav, section, article, aside, footer {
 
 header{
     height : 100px;
+    background-color: blue;
     /* width : 100%; 블록레벨 태그는 자동으로 옆으로 채우는 성격이 있어서 width */
 }
 
-section{
+nav{
+    background-color: yellow;
     width:80%;
+    height:100px;
+    margin: 0px auto;
+    padding-top : 60px;
+}
 
+ul{
+    list-style : none;
+    display:flex;
+    background-color:skyblue;
+    
 
 }
 
-aside{
-    width: 20%;
+ul > li {
+    background-color:aqua;
+    margin: 0px auto;
+    width : 100px;
+
 }
 
 div{
@@ -26,17 +47,25 @@ div{
     height:700px;
 }
 
-article{
-    background-color : beige;
+section{
+    width:80%;
 
 }
+
+article{
+    background-color : beige;
+    width:30%;
+
+}
+
+aside{
+    width: 20%;
+}
+
+
+
 
 footer{
     height:100px;
 }
 
-nav{
-    background-color: yellow;
-    width:80%;
-    margin: 0px auto;
-}
