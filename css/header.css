@@ -1,0 +1,11 @@
+.main-menu{
+    display : flex;
+    background-color : yellow;
+}
+
+.inner, .main-menu, .section{
+
+    display : flex;
+    background-image : url(nature);
+}
+

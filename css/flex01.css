@@ -1,0 +1,59 @@
+.container{
+    background: pink;
+    height : 100vh;
+    display: flex;
+    flex-wrap : wrap;
+    /* flex-direction : column; --> 세로로 정렬 -reverse를 붙이면 반대 방향으로 나타남
+    기본 값은 가로로 되어있음*/
+}
+
+.item{
+    width : 50px;
+    height : 50px;
+}
+
+.item1{
+    background-color : beige;
+}
+.item2{
+    background-color : red;
+}
+.item3{
+    background-color : chocolate;
+}
+.item4{
+    background-color : yellow;
+}
+.item5{
+    background-color : green;
+}
+.item6{
+    background-color : blue;
+}
+.item7{
+    background-color : darkblue;
+}
+.item8{
+    background-color : purple;
+}
+.item9{
+    background-color : yellowgreen;
+}
+.item10{
+    background-color : aqua;
+}
+.item11{
+    background-color : black;
+}
+.item12{
+    background-color : cadetblue;
+}
+.item13{
+    background-color : darkcyan;
+}
+.item14{
+    background-color : fuchsia;
+}
+.item15{
+    background-color : grey;
+}

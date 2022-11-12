@@ -1,0 +1,42 @@
+header, nav, section, article, aside, footer {
+   
+    background-color : burlywood;
+    display : block;
+    margin: 3px;
+
+}
+
+header{
+    height : 100px;
+    /* width : 100%; 블록레벨 태그는 자동으로 옆으로 채우는 성격이 있어서 width */
+}
+
+section{
+    width:80%;
+
+
+}
+
+aside{
+    width: 20%;
+}
+
+div{
+    display:flex;
+    height:700px;
+}
+
+article{
+    background-color : beige;
+
+}
+
+footer{
+    height:100px;
+}
+
+nav{
+    background-color: yellow;
+    width:80%;
+    margin: 0px auto;
+}

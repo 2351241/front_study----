@@ -1,0 +1,15 @@
+div{
+
+    width : 200px;
+    height : 100px;
+    padding : 20px;
+    border : 10px solid black;
+    background-color : yellow;
+
+}
+
+.border{
+    box-sizing: border-box;
+
+
+}
