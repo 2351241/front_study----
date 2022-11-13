@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a {font-size : 1em}
+        #b {font-size : 2em}
+        #box-rem{
+            font-size : 10px;
+            width : 10rem;
+            height : 100px;
+            background-color : blue;
+        }
+        #box-em{
+            font-size : 10px;
+            width : 10em;
+            height : 100px;
+            background-color : red;}
+    </style>
+
+</head>
+
+<body>
+    <!-- 가변단위 em rem : 박스에서 텍스트 크기를 조정할 때 사용하는 상대적인 단위
+    1) em : 같은 요소의 폰트사이즈 혹은 없으면 상위 부모요소의 폰트사이즈 기준
+    2) rem : 최상단 rpot요소 = <html> 요소 font-size를 기준 = 16px; -->
+ 
+    <!-- 1em 2em 단위 비교 및 부모요소 기준으로 연습 -->
+    <div style = "font-size : 30px;">
+        <p id = "a"> 자식 요소에 1em 글꼴 크기 : 1*30 = 30</p>
+        <p id = "b"> 자식 요소에 2em 글꼴 크기 : 2*30 = 60</p>
+    </div>
+
+    <!-- rem과 em 단위로 생성한 박스 크기 비교 -->
+
+    <div id ="box-rem">rem : width 160px</div>
+    <div id ="box-em">em : width 100px</div>
+
+</body>
+</html>
