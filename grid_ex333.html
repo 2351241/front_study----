@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            grid-template-columns: 1fr 2fr 3fr;
+            /* fr은 fraction 분수, 비율 (1fr 2fr 1대2 비율) */
+            /* repeat(3, 100px); */
+            /* 200px 200px 200px; */
+            grid-template-rows: 100px 100px 100px;
+            border : 2px dashed red;
+            display : grid;
+        }
+
+        .item{
+            border : 4px dashed blue;
+        }
+
+        .item:nth-child(1){
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .item:nth-child(2){
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class = "container">
+        <div class = "item">1</div>
+        <div class = "item">2</div>
+        <div class = "item">3</div>
+        <div class = "item">4</div>
+        <div class = "item">5</div>
+    </div>
+</body>
+</html>

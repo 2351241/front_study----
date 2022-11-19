@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        div{
+            background-color : yellowgreen;
+            width:100px;
+            height:100px;
+            border-radius : 10px;
+            
+        }
+        div:hover{
+           animation : my-loading 4s infinite alternate;
+           
+        }
+        @keyframes my-loading{
+            from{
+                width:100px;
+
+            }
+            75%{
+                width:700px;
+                background-color:aqua
+            }
+            to{
+                width: 400px;
+                background-color:burlywood;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div></div>
+    
+    
+</body>
+</html>

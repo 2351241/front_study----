@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box{
+            width:150px;
+            height:100px;
+            background-color:aquamarine;
+            border-radius : 20px;
+            animation: my-loading 10s linear infinite alternate;
+            display: flex;
+            /* 가로축에서 중앙정렬 */
+            justify-content:center;
+            /* 세로축에서 중앙정렬 */
+            align-items: center;
+        }
+
+        .box::before{
+            content: "Loading";
+            font-size: 20px;
+            font-weight: 700; /*700은 bold와 같다*/
+        }
+
+        .box:hover::before{
+            content:"paused";
+            color : white;
+        }
+
+    
+
+        .box:hover{
+            animation-play-state : paused;
+            background-color : red;
+        }
+
+        @keyframes my-loading {
+            from{width:150px;}
+            to{width:100%;}
+
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+    <div class = "box"></div>
+    
+</body>
+</html>
