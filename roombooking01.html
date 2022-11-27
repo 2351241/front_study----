@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width:960px;
+            margin:0 auto;
+        }
+        .navi{
+            width:960px;
+            height:60px;
+            padding-bottom:10px;
+            border-bottom:2px solid #ccc;
+        }
+        .navi ul{
+            list-style: none;
+            padding-top:10px; 
+            padding-bottom:5px;
+        }
+        .navi ul li {
+            display:inline-block;
+            width:150px;
+            padding:10px;   
+        }
+        .navi a:link, .navi a:visited {
+            font-size:14px;
+            padding: 10px; 
+            text-decoration: none;  /* 밑줄 없음 */
+
+        }
+        .navi a:hover, .navi a:focus {
+            background-color:#222;  /* 배경색 */
+            color:#fff;  /* 글자색 */
+        }
+
+        .navi a:active {
+            background-color:#f00;  /* 배경색 */
+        }
+        .contents {
+            margin:30px auto;
+            width:400px;
+            padding:20px;
+            border:1px solid #222;
+            border-radius:5px;        
+        }
+        #intro:target{
+            background-color:blue;
+        }
+        #room:target{
+            background-color:orange;
+        }
+        #reservation:target{
+            background-color:beige;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class = "container">
+    <nav class="navi">
+        <ul>
+            <li><a href="#intro">이용 안내</a></li>
+            <li><a href="#room">객실 소개</a></li>
+            <li><a href="#reservation">예약 방법 및 요금</a></li>
+            <li><a href="#booking02.html">예약하기</a></li>
+        </ul>
+    </nav>
+    <div id ="intro" class = "contents">
+        <h2>이용 안내</h2>
+        <p>정당의 설립은 자유이며, 복수정당제는 보장된다. 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다.
+            국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을 심의한다.
+            모든 국민은 고문을 받지 아니하며, 형사상 자기에게 불리한 진술을 강요당하지 아니한다.
+            법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여 퇴직하게 할 수 있다.
+            군인·군무원·경찰공무원 기타 법률이 정하는 자가 전투·훈련등 직무집행과 관련하여 받은 손해에 대하여는 법률이 정하는 보상외에 국가 또는 공공단체에 공무원의 직무상 불법행위로 인한 배상은 청구할 수 없다.</p>
+    </div>
+
+    <div id ="room" class = "contents">
+        <h2>객실 소개</h2>
+        <p>정당의 설립은 자유이며, 복수정당제는 보장된다. 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다.
+            국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을 심의한다.
+            모든 국민은 고문을 받지 아니하며, 형사상 자기에게 불리한 진술을 강요당하지 아니한다.
+            군인·군무원·경찰공무원 기타 법률이 정하는 자가 전투·훈련등 직무집행과 관련하여 받은 손해에 대하여는 법률이 정하는 보상외에 국가 또는 공공단체에 공무원의 직무상 불법행위로 인한 배상은 청구할 수 없다.</p>
+    </div>
+
+    <div id ="reservation" class = "contents">
+        <h2>예약 방법 및 요금</h2>
+        <p>정당의 설립은 자유이며, 복수정당제는 보장된다. 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다.
+            법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여 퇴직하게 할 수 있다.
+            군인·군무원·경찰공무원 기타 법률이 정하는 자가 전투·훈련등 직무집행과 관련하여 받은 손해에 대하여는 법률이 정하는 보상외에 국가 또는 공공단체에 공무원의 직무상 불법행위로 인한 배상은 청구할 수 없다.</p>
+    </div>
+</div>
+</body>
+</html>
