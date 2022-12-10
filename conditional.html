@@ -17,22 +17,20 @@
         let a = prompt("아이디를 입력하세요")
         let b = prompt("비번을 입력하세요")
 
-        if(a == id){
-            document.write('비번 입력')
+        if(id == a){
+            if(pw ==b){
+                document.write('로그인되엇스빈다.')
+            }
+            else {alert('비밀번호가 틀렷습니다.')}
+            location.reload()
+
         }
 
-        if(a != id){
-            document.write('아이디를 다시 입력해주세요')
-        }
+        else{
+            alert("아이디가 틀렸습니다.")
+            location.reload()
 
-        if(b == pw){
-            document.write('비번 입력')
         }
-
-        if(b != pw){
-            document.write('login fail')
-        }
-
 
     </script>
     
