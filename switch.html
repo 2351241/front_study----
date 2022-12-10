@@ -10,21 +10,31 @@
 
 <body>
     <script>
-        const coffee = prompt('먹고 싶은 커피의 종류를 입력하세요.')
+        // const coffee = prompt('먹고 싶은 커피의 종류를 입력하세요.')
 
-        switch(coffee){
-            case '아메리카노' : document.write('1500원')
-            break
-            location.reload()
-            case '카페라떼' : document.write('2000원')
-            break
-            location.reload()
-            case '카푸치노' : document.write('3000원')
-            break       
-            location.reload()
-            default: document.write('잘못된 단어를 입력했습니다.') 
-            location.reload()
+        // switch(coffee){
+        //     case '아메리카노' : document.write('1500원')
+        //     break
+        //     case '카페라떼' : document.write('2000원')
+        //     break
+        //     case '카푸치노' : document.write('3000원')
+        //     break       
+        //     default: document.write('잘못된 단어를 입력했습니다.') 
+        // }
+
+        let coffee = prompt('먹고 싶은 커피의 종류를 입력하세요.')
+
+        if(coffee == '아메리카노'){
+            document.write('1500원 입니다.')
         }
+        else if(coffee == '카페라떼'){
+            document.write('2000원 입니다.')
+        }
+        else if(coffee == '카푸치노'){
+            document.write('3000원 입니다.')
+        }
+        else document.write('다시 입력해주세요.')
+        location.reload()
 
 
     </script>
