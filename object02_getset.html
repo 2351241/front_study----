@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+
+        //get은 기존데이터를 가지고서 조회하는 기능을 한다.
+
+        let numbers = {
+            a : 2,
+            b : 3,
+            get add(){
+                console.log('add 함수가 실행됩니다.')
+                return this.a + this.b
+            }
+        }
+
+        //get 함수를 불러올때 numbers.add()--> 이 방식으로 호출 x
+
+        console.log(numbers.add)
+        numbers.b = 7
+        console.log(numbers.add)
+
+        //set 함수
+
+        let numbers2 = {
+            _c : 3,
+            _d : 2,
+            sum : 5,
+            calculate(){
+                console.log('계산')
+                this.sum = this._c+this._d
+            },
+
+            get c(){
+                return this._c
+            },
+            
+            get d(){
+                return this._d
+            },
+
+            set c(value){
+                this._c = value;
+                this.calculate()
+            },
+            set d(value){
+                this._d = value;
+                this.calculate()
+            }
+        }
+        
+        console.log(numbers2.sum)
+
+        numbers2.c = 5;
+        numbers2.d = 15;
+
+        console.log(numbers2.sum)
+
+        let numbers3 = {
+            e : 3,
+            f : 9,
+            sum : 12,
+            calculate(){
+                colsole.log('합계')
+                this.sum=this.e+this.f
+            },
+            
+        }
+        
+
+    </script>
+</body>
+</html>
