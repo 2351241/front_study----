@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+        let animals = ['tiger', 'rabbit', 'dog', 'cat']
+        animals.forEach( animal => console.log(animal))
+
+        let numbers = [1,2,3]
+        let sum = 0
+        numbers.forEach( n => sum+=n)
+
+        console.log(sum)
+
+        let numbers2 = [1,2,3]
+        let sum2 = numbers2.reduce( (accumulator, current)=> accumulator+current, 0)
+        // 1) accumulator 파라미터에 초기값 0이 우선 들어간다.
+        // 2) current 파라미터에 배열데이터를 하나씩 받아준다.
+        // 즉 1을 받아서 실행코드를 돌고, 다시 2 3 등 배열데이터를 하나씩 계속받는다.
+        // (accumulator, current) : (0,1) (1,2) (3,3)
+        console.log(sum2)
+
+        let numbers3 = [4,5,6]
+        let sum3 = numbers3.reduce( (a, c) => a*c, 0)
+        console.log(sum3)
+        
+
+        const number = [1,2,3,4,5]
+        const average = number.reduce( (accumulator, current)=> accumulator+current, 0)
+        console.log(average/5)
+
+       // 함수예제 - 배열을 객체로 변경하기
+
+       const alphabets = ['a','a','a','b','c','c','d','e']
+       const count = alphabets.reduce( (acc, crr)=>{
+        if(acc[crr]){// 'a'라는 데이터가 있다면 다음의 실행
+            acc[crr] += 1 // acc[crr] = acc[crr] + 1
+        }
+        else{ acc[crr] = 1 }
+
+        return acc;
+
+       } , {}) // 초기값은 {}로 객체화한다. 데이터는 비어있는 상태!
+
+       console.log(count)
+
+       // 함수예제 - 배열을 객체로 변경하기(동명이인이 몇명인지 객체정보 출력)
+       const names = ['Messi','Son','Messi','Ronaldo','Ronaldo','Ronaldo']
+       const counts = names.reduce( (acc, crr)=>{
+        if(acc[crr]){
+            acc[crr] +=1
+        }
+        else{acc[crr] = 1}
+        
+        return acc;
+       }, {})
+       console.log(counts)
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
