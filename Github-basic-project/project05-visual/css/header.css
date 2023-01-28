@@ -1,65 +1,252 @@
-.body__container{
-    font-family: 'Roboto',sans-serif;
-    font-size:100px;
-    font-weight:400;
-    color:#333;
-    font-size:16px;
-}
-
-a{
-    text-decoration:none;
-}
-
-header{
-    border-bottom: 1px solid rgba(0,0,0, .75);
-    box-shadow: 0 0 5px rgba(0,0,0, .75);
+/* COMMON */
+.body__container {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #333;
+  }
+  
+  
+  /* BTN */
+  .btn {
+      height: 34px;
+      background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 4px;
+      display: inline-flex;/* flex는 블록처럼 가로전체차지, inline-flex;s는 글자크기만큼 가로크기 조절 */
+      align-items: center; /* *수직 가운데 정렬*/
+      padding: 0 12px; /* 가로크기조절을위한방법으로 padding과 display:inline-flex;를 사용 / padding은 위아래 여백은 없고 , 좌우여백만 12px로 설정 */
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5; /* 줄크기. font-size에 곱하기 1.5, 줄크기는 즉 14px의 1.5배*/
+      color: #333; /** #333333과 동일 ?
+    
+      /* linear-gradient(DIRECTION, COLOR1, COLOR2, ...); */
+      cursor: pointer;
+      box-sizing: border-box;
+      position: relative; /*  부모영역-자식 요소 abosolute가 relative부모를 기준으로 이동하기에 설정해줌*/
+    }
+    
+    .btn:hover::before {
+      content: "";
+      position: absolute;  /* 자식영역-부모 relative를 기준으로 이동하기에 부모.btn 에 relative설정함*/
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.07); /* 투명도 0.07*/
+    }
+    .btn.btn--primary {
+      border: 1px solid #65b836;
+      color: #fff; /* white color*/
+      background: #55a532 linear-gradient(#91dd70, #55ae2e);
+    }
+  
+    /* INPUT */
+  .input--text {
+      height: 34px;
+      padding: 0 10px;  /*padding은 border와 content 사이여백으로 위아래 0, 좌우 10px */
+      font-size: 16px;
+      border: 1px solid #ddd; /* 조금 밝은 컬러의 테두리로 설정*/
+      border-radius: 5px;
+      outline: none; /* 포커스할때 변하는 테두리색상인데  제어하기 어려워서 none으로 설정*/
+      box-sizing: border-box;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075); /*0 1px 2px red로 눈에띄는 컬러로 해당 영역확인가능 */
+      /* inset은 입력창테두리 안쪽에 그림자를 넣을때! 7.5퍼센트 투명도를 의미 */
+    }
+    .input--text:focus {
+      border-color: #51a7e8;  /*  테두리 blue color */
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba(81, 167, 232, .5);
+    }
+  
+    /* Vendor prefix(브라우저 업체별 접두어) */
+  .input--text::-webkit-input-placeholder { color: #cacaca; } /* 크롬 */
+  .input--text:-ms-input-placeholder      { color: #cacaca; } /* edge (microsoft)*/
+  .input--text::-moz-placeholder          { color: #cacaca; } /* firefox (mozila) */
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* INNER LEFT / RIGHT */
+  .float--left {
+    float: left;
+  }
+  .float--right {
+    float: right;
+  }
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  
+  /* SECTION */
+  .section {
+    position: relative;
+  }
+  .section .inner {
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  
+  /* HEADER */
+  header {
+    border-bottom: 1px solid rgba(0, 0, 0, .75);
+    /* box-shadow: X Y BLUR SPREAD COLOR; */
+    box-shadow: 0 0 5px rgba(0, 0, 0, .75);
     background: #fff;
-}
-
-header .inner{
-    max-width:980px;
-    height:78px;
-    margin:0 auto;
-}
-
-header .menu-group{
-    display:flex;
-    align-items:center;
-    height:100%
-}
-
-header .logo{
+  }
+  header .inner {
+    height: 78px;
+    /*하단 두개는 header우측메뉴만들면서.section inner 공통요소로 빼줌 */
+   /* max-width: 980px;  최대 넓이980픽셀이고 줄어들수는 있다. */
+   /* margin: 0 auto;  가운데 정렬하는 방식으로 많이 사용되고 주의할점은 max-width나 width등이 있어야 적용됨 */
+  
+   /* background: red; (inner영역확인 테스트용)*/ 
+  }
+  /* Menu group(Left) */
+  header .menu-group {
+    display: flex;  /* 메뉴목록들이 가로측으로 열거 되는 효과 */
+    align-items: center;  /* 세로축 중앙정렬 */
+    height: 100%;
+  }
+  header .logo {
     margin-right: 10px;
-}
+  }
+  header .logo a {
+    background: url("../img/logo.svg");
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -9999px; /* 대체 텍스트 */
+  }
+  header .logo a:hover {
+    background: url("../img/logo_on.svg");
+  }
+  header .main-menu {
+    display: flex;
+  }
+  
+  /* 메뉴에 마우스를 올리면 마우스모양이 변하는 영역을 만드는 단계로 li(단순 품목들의 나열)가 아니라 a 태그에 해당하니 주의! */
+  header .main-menu li a { 
+    /* 내부여백인 padding을 주면서 생긴 더 큰영역에 마우스 오버시 마우스모양을변하게함, 즉 글씨자체의 좁은 영역을 마우스오버해야하는 불편함을 줄임  */
+    padding: 10px;  
+    display: block; /* a 태그는 inline요소로 padding 크기 적용이 안되서 block요소로 변경해서 적용되게함 */
+    color: #3c4146;
+  }
+  
+  header .main-menu li a:hover {
+    color: #4078c0;
+  }
+  
+  
+  /* Sign group(Right) */
+  header .sign-group {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  header .btn-group {
+    order: 2;
+    display: flex;
+  }
+  header .btn-group .sign-in {
+    margin-right: 4px;
+  }
+  #search-form {
+    order: 1;
+    margin-right: 12px;
+  }
+  #search {
+    width: 160px;
+    font-size: 14px;
+  }
+  #search + [type="submit"] {
+    display: none;
+  }
+  
+  header .sub-menu {
+    margin-right: 10px;
+    display: flex;
+  }
+  header .sub-menu li a {
+    padding: 8px;
+    color: #3c4146;
+    font-size: 13px;
+    display: block;
+  }
+  header .sub-menu li a:hover {
+    color: #4078c0;
+  }
 
-header .logo a{
-    background: url(../img/logo.svg); /*  ../  --> 사용시 해당폴더 밖으로 나가는 명령! */
-    width:32px;
-    height:32px;
-    display:block; /* inline 속성은 크기속성은 적용되지 않는다. ex) a태그 */
-    text-indent: -9999px; /* Github라는 문구를 대체텍스트 alt 대신 사용하기위해 왼쪽으로 민다. 사진이 보이지 않을시 대신해서 나타나는 글자 */
-}
+  /* Visual */
+  .section--visual{
+    background-image : url(../img/bg.jpg);
+    background-repeat : no-repeat;
+    background-position : bottom left;
+  }
 
-header .logo a:hover{
-    background: url(../img/logo_on.svg);
-}
-
-header .main-menu{
+  .section--visual .inner{
+    max-width: 980px;
+    margin : 0 auto;
+    padding : 160px 0;
+    /* 배경 이미지 크기 조절 */
     display:flex;
-}
+  }
 
-header .main-menu li a{
-    padding: 10px;
-    display:block;
-    color:#3c4146;
-}
+  .section--visual .summary{
+    flex:1;
+    margin-right:90px;
+  }
 
-header .main-menu li a:hover{
-    color:#4078c0;
-}
+  .section--visual .summary__title{
+   font-size: 54px;
+   color: #fff;
+   text-shadow: 0 1px 1px rgba(0,0,0,.25),
+                0 1px 1px rgba(0,0,0,.75);
+  }
 
-.clearfix::after{
-    content:"";
-    clear:both;
-    display:block;
+  .section--visual .summary__description{
+    color:#fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.25),
+                 0 1px 1px rgba(0,0,0,.75);
+
+  }
+  
+  #sign-form{
+    width:340px;
+    margin-top:16px;
+  }
+
+  #sign-form li{
+    margin-bottom:17px;
+  }
+
+  #sign-form li:last-child{
+    margin-bottom:0px;
+  }
+
+  #sign-form .input--text{
+    width:100%;
+    height:40px;
+  }
+
+  #sign-form .caption{
+    color:rgba(255,255,255,.6);
+    font-size:12px;
+    margin-top:5px;
+    text-align:center;  
+    line-height:1.5;
+  }
+
+  #sign-form [type="submit"]{
+    width:100%;
+    height:62px;
+    padding:0 25px;
+    font-size:20px;
+    justify-content:center;
   }

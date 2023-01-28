@@ -58,22 +58,95 @@
 <body>
 <div class="body__container">
    
-    <header class="section">
-        <div class="inner clearfix">
-        <!-- 헤더의 좌측 메뉴 -->
-            <div class="menu-group">
-                 <div class="logo"><a href="#">Github</a></div>
-                  <ul class="main-menu">
-                    <li><a href="#">Personal</a></li>
-                    <li><a href="#">Open source</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Explore</a></li>
-                  </ul>
-            </div>
+  <!--HEADER-->
+  <header class="section">
+    <div class="inner clearfix">
+
+      <div class="menu-group float--left">
+        <div class="logo">
+          <a href="#">Github</a>
         </div>
-    </header>
+<!-- 좌측메뉴 -->
+        <ul class="main-menu toggle">
+          <li><a href="#">Personal</a></li>
+          <li><a href="#">Open source</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Explore</a></li>
+        </ul>
+      </div>
+<!-- 우측메뉴 -->
+      <div class="sign-group float--right toggle">
+        <div class="btn-group">
+          <a class="btn sign-in" href="#">Sign in</a>
+          <a class="btn btn--primary sign-up" href="#">Sign up</a>
+        </div>
+
+        <form id="search-form" method="post" action="">
+          <input id="search" class="input--text" type="text" placeholder="Search GitHub">
+          <input type="submit"> <!-- submit 단추 css파일 168번째줄에서 안보이게 설정 : 
+            #search + [type="submit"] { display: none; } 
+          -->
+        </form>
+
+        <ul class="sub-menu">
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </header>
+
+    <!--VISUAL-->
+    <section class="section section--visual">
+      <div class="inner">
+  
+        <!-- visual 좌측 텍스트영역 - flexible 하게 !  -->
+        <div class="summary"> 
+          <div class="summary__title">How&nbsp;people build&nbsp;software</div>
+          <div class="summary__description">Millions of developers use GitHub to build personal projects, support their
+            businesses, and&nbsp;work together on open source technologies.</div>
+        </div>
+  
+        <!-- visual 우측 가입form 영역 - fix 하게 ! -->
+        <form id="sign-form" method="post" action="">
+          <ul>
+            <li><input class="input--text" type="text" placeholder="Pick a username"></li>
+            <li><input class="input--text" type="email" placeholder="Your email address"></li>
+            <li><input class="input--text" type="password" placeholder="Create a password">
+              <p class="caption">Use at least one letter, one normal and seven characters.</p>            
+            </li>
+
+            <li><button class="btn btn--primary" type="submit"> Sign up for Github </button>
+              <p class="caption">By clicking "Sign up for GitHub", you agree to our terms of service and privacy policy.
+                We'll occasionally send you account related emails.</p>            
+            </li>
+          </ul>
 
 
-</div>
+        </form>
+      </div>
+    </section>
+
+        <!-- feature -->
+        <section class="section section--feature">
+          <div class="summary">
+
+          </div>
+
+          <div class="video">
+            <iframe width="520" height="293" src="https://www.youtube.com/watch?v=rlxs-iUZa0M"></iframe>
+
+          </div>
+
+          <div class="titles">
+
+          </div>
+
+        </section>
+
+      
+  </div>
 </body>
 </html>
