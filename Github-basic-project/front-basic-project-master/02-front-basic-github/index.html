@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Github</title>
+
+  <meta name="j.kim" content="miniproject">
+  <meta name="description" content="GitHub is where people build software.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+
+  <!-- open graph 와 twitter card : : 카카오톡같은곳에 웹링크를 넣으면 보이는 미리보기 화면을 설정--> 
+  <!-- http://ogp.me/   오픈그래프 open graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GitHub">
+  <meta property="og:title" content="Build software better, together">
+  <meta property="og:description" content="GitHub clone coding / GitHub is where people build software.">
+  <meta property="og:image" content="img/logo__github.png">
+  <meta property="og:url" content="https://github.com">
+
+  <!-- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:site" content="GitHub">
+  <meta property="twitter:title" content="Build software better, together">
+  <meta property="twitter:description" content="GitHub clone coding / GitHub is where people build software.">
+  <meta property="twitter:image" content="img/logo__github.png">
+  <meta property="twitter:url" content="https://github.com">
+
+  <!-- 1)IE 일경우 favicon설정을 하단처럼 주석처리 이유는 다음과 같은 사유로 자동인식되서이다. :
+     루트 경로(최상위github폴더 하단에 index.html과 나란히 있는 상태)에 `favicon.ico`가 있을경우 자동인식하고 그렇지 않을경우 태그에 작성한 루트를 반영 -->
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+  <link rel="icon" href="favicon.png"> <!-- 2) 웹 (IE외에 )기본 favicon 설정-->
+  <link rel="apple-touch-icon" href="favicon.png"> <!-- 3) 앱( 아이폰+ 안드 포함 ) favicon 설정-->
+
+
+  <!-- 2)reset.css 초기화 : 브라우저가 가진 여백을포함한 기본스타일 및 .css파일의 기존스타일들을 없에고 초기화-->
+  <!--<link rel="stylesheet" href="css/reset.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> 
+  <!-- 1) 구글폰트 홈피를 사용한 link 와 css 속성 연결후 hello world 를 body안에 넣어 폰트체크-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/main.css"> 
+
+ 
+</head>
+
+<body>
+<div class="body__container">
+
+  <!-- 1) BEM : css작명규칙 
+   a__b : a의 일부분인 b 라는 의미로, 언더바를 두번 사용한다. 
+   c--d : c의 상태는 d 라는 의미로, 대쉬를 두번 사용한다.  
+
+  <div class="container">
+    <div class="container__item"></div>
+  </div>
+ 
+  <div class="btn--sucess"></div>
+  <div class="btn--danger"></div>
+ -->
+
+  
+ <!-- 2) 반복적으로 사용할 버튼 및 input입력창 스타일 미리 만들어두기 -->
+ <!-- 2-1) 버튼 -->
+<div class="btn"> basic Button</div>
+<div class="btn btn--primary"> Primary Button</div>
+
+  <div class="btn"> Button 1 </div>
+  <div class="btn"> Button 2 </div>
+  <div class="btn btn--primary"> Button 3 </div>
+  <div class="btn btn--primary"> Button 4 </div>
+
+  <!-- 2-2) input 입력창 -->
+  <input type="text" class="input--text" placeholder="Search GitHub">
+</div>
+</body>
+</html>

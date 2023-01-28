@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Github</title>
+
+  <meta name="j.kim" content="miniproject">
+  <meta name="description" content="GitHub is where people build software.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+
+  <!-- open graph 와 twitter card : : 카카오톡같은곳에 웹링크를 넣으면 보이는 미리보기 화면을 설정--> 
+  <!-- http://ogp.me/   오픈그래프 open graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GitHub">
+  <meta property="og:title" content="Build software better, together">
+  <meta property="og:description" content="GitHub clone coding / GitHub is where people build software.">
+  <meta property="og:image" content="img/logo__github.png">
+  <meta property="og:url" content="https://github.com">
+
+  <!-- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:site" content="GitHub">
+  <meta property="twitter:title" content="Build software better, together">
+  <meta property="twitter:description" content="GitHub clone coding / GitHub is where people build software.">
+  <meta property="twitter:image" content="img/logo__github.png">
+  <meta property="twitter:url" content="https://github.com">
+
+
+  <!-- 1)IE 일경우 favicon설정을 하단처럼 주석처리 이유는 다음과 같은 사유로 자동인식되서이다. :
+     루트 경로(최상위github폴더 하단에 index.html과 나란히 있는 상태)에 `favicon.ico`가 있을경우 자동인식하고 그렇지 않을경우 태그에 작성한 루트를 반영 -->
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+  <link rel="icon" href="favicon.png"> <!-- 2) 웹 (IE외에 )기본 favicon 설정-->
+  <link rel="apple-touch-icon" href="favicon.png"> <!-- 3) 앱( 아이폰+ 안드 포함 ) favicon 설정-->
+
+
+  <!-- 2)reset.css 초기화 : 브라우저가 가진 여백을포함한 기본스타일 및 .css파일의 기존스타일들을 없에고 초기화-->
+  <!--<link rel="stylesheet" href="css/reset.css">-->
+ <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">--> 
+
+  <!-- 1) 구글폰트 홈피를 사용한 link 와 css 속성 연결후 hello world 를 body안에 넣어 폰트체크-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/main.css"> 
+
+ 
+</head>
+
+<body>
+   <!--1) 구글폰트 테스트 : 개발자도구 style탭에서 구글폰트unchecked 해보고 비교 및 적용확인-->
+  Hello World
+
+  <!-- 2)reset.css 테스트 : reset.css적용시 브라우저 디폴트 스타일인 여백을 및 아래의 스타일 모두 삭제및 초기화-->
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+</body>
+</html>

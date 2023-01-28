@@ -1,0 +1,77 @@
+.btn{
+    height:34px;
+    background : #eee linear-gradient(to bottom, #fcfcfc, #eee);
+    border: 1px solid;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #333;
+    
+    
+    cursor: pointer;
+    position:relative;
+    box-sizing:border-box;
+  }
+  
+  .btn:hover::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.07)
+    
+  }
+  
+  .btn--primary{
+    border:1px solid #65b836;
+    color:#fff;
+    background:#55a532 linear-gradient(#91dd70, #55ae2e)
+  }
+  
+  
+  /* Input */
+  .input--text{
+    height:34px;
+    padding:0 10px;
+    font-size:16px;
+    border:1px solid #ddd;
+    border-radius:5px; 
+    outline: none;
+    box-sizing:border-box;
+    box-shadow: inset 1px 2px rgba(0,0,0,.075);
+  }
+  
+  .input--text:focus{
+    border-color:#51a7e8;
+    box-shadow:inset 0 1px 2px rgba(0,0,0,.075),
+                     0 0 5px rgba(81,167,234,.5);
+  }
+  
+  /* 문제 코드 : 텍스트 컬러가 red로 적용이 안됨.
+  .input--text{
+    color:red;
+  } 
+  해결 방법 : Vendor prefix(브라우저 업체별 접두어)
+  
+  */
+  
+  /* 크롬 */
+  .input--text::-webkit-input-placeholder{
+    color:#cacaca;
+  }
+  
+  /* 마이크로소프트 */
+  .input--text::-ms-input-placeholder{
+    color:#cacaca;
+  }
+  
+  /* 아마존 */
+  .input--text::-moz-input-placeholder{
+    color:#cacaca;
+  }
