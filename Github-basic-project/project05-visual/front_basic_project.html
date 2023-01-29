@@ -132,21 +132,107 @@
         <!-- feature -->
         <section class="section section--feature">
           <div class="summary">
-
+            <h2 class="summary__title">Welcome home, developers</h2>
+            <p class="summary__description">GitHub fosters a fast, flexible, and collaborative development process that lets
+              you work on your own or with others.</p>
           </div>
 
           <div class="video">
-            <iframe width="520" height="293" src="https://www.youtube.com/watch?v=rlxs-iUZa0M"></iframe>
-
+            <div class="video-ratio">
+              <iframe width="520" height="293" src="https://www.youtube.com/embed/rlxs-iUZa0M" title="[#무한도전] 누가 딜러고 누가 탱커야? 하와수 티키타카 모음 5탄🤼 | 무한도전⏱오분순삭 MBC070414방송" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
           </div>
 
-          <div class="titles">
-
+          <div class="tiles">
+            <div class="inner">
+              <ul>
+                <li>
+                  <img src="img/feature-tile__build.png" alt="build">
+                  <h3>For everything you build</h3>
+                  <p>Host and manage your code on GitHub. You can keep your work private or share it with the world.</p>
+                </li>
+                <li>
+                  <img src="img/feature-tile__projects.png" alt="projects">
+                  <h3>Millions of projects</h3>
+                  <p>GitHub is home to millions of open source projects. Try one out or get inspired to create your own.</p>
+                </li>
+                <li>
+                  <img src="img/feature-tile__work.png" alt="work">
+                  <h3>A better way to work</h3>
+                  <p>From hobbyists to professionals, GitHub helps developers simplify the way they build software.</p>
+                </li>
+                <li>
+                  <img src="img/feature-tile__platform.png" alt="platform">
+                  <h3>One platform, from start to finish</h3>
+                  <p>With hundreds of integrations, GitHub is flexible enough to be at the center of your development
+                    process.</p>
+                </li>
+                
+              </ul>
+            </div>
           </div>
 
         </section>
 
-      
+        <!-- Where is -->
+        <section class="section section--where-is">
+          <div class="inner">
+
+            <div class="summary">
+              <h2 class="summary__title">Where is Github?</h2>
+              <p class="summary__description">GitHub is where people build software. More than 18 million people use GitHub to
+                discover, fork, and contribute to over 48 million projects.</p>
+            </div>
+
+            <div id="map"></div>
+
+          </div>
+
+
+        </section>
+      <!-- Pricing card -->
+      <section class="section section--pricing">
+        <div class="inner">
+          <div class="card">
+            <div class="cell cell1">
+              <a class="btn btn--primary" href="#">Sign up for Github</a>
+
+            </div>
+            <div class="cell cell2">
+              Public projects are always free. Work together across unlimited private repositories for $7 / month.
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
   </div>
+    <script>
+      // Initialize and add the map
+        function initMap() {
+          // The location of Uluru
+          const myLatLng = { lat: 37.7822706, lng: -122.3956491 };
+          // The map, centered at Uluru
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 18,
+            center: myLatLng,
+            scrollwheel: true /* 마우스 휠 이동시 지도에 영향 주냐 안주냐에 따른 차이 줄수 있다 */
+          });
+          // The marker, positioned at Uluru
+          const marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+          });
+        }
+
+        window.initMap = initMap;
+
+
+    </script>
+
+    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"  defer></script>
+
 </body>
 </html>
