@@ -1,4 +1,3 @@
-
 import './App.css';
 import UserList from './UserList';
 import ArrayAdd from './ArrayAdd';
@@ -54,6 +53,10 @@ function App(){
 
     }
 
+    const onRemove = id => {
+      setUsers(users.filter(user => user.id !== id))
+    }
+
 
   return(
     <>
@@ -63,7 +66,7 @@ function App(){
       onChange={onChange}
       onCreate={onCreate}/>
 
-      <UserList users={users}/>
+      <UserList users={users} onRemove={onRemove}/>
     </>
     )
 }
