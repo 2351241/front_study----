@@ -1,24 +1,24 @@
 import React from 'react'
 
-function ArrayAdd({username, email, onChange, onCreate}){
+function ArrayAdd({username, email, onInputChange, onCreateClick}){
     return(
         <div>
             <input 
             name="username" 
             placeholder="계정명" 
-            onChange={onChange} 
+            onChange={onInputChange} 
             value={username}/>
 
             <input
             name="email" 
             placeholder="이메일" 
-            onChange={onChange} 
+            onChange={onInputChange} 
             value={email}/>
 
-            <button onClick={onCreate}>등록</button>
+            <button onClick={onCreateClick}>등록</button>
             
         </div>
     );
 }
-
+    
 export default ArrayAdd;

@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React, {useEffect} from 'react';
 
 function User({propUser, onDeleteClick, onToggleClick}){
     const {username, email, id, active} = propUser
@@ -14,14 +13,12 @@ function User({propUser, onDeleteClick, onToggleClick}){
     );
 }
 
-
-function UserList({users, onRemove}){
+function MemberList({ propUsers, deleteClick, toggleClick}) {
     return(
         <div>
-            {users.map(user=>(<User user={user} key={user.id} onRemove={onRemove}/>))}
+           {propUsers.map(u => (<User propUser={u} key={u.id} onDeleteClick={deleteClick} onToggleClick = {toggleClick} />))}
         </div>
-    );
-    
+    )
 }
 
-export default UserList;
+export default MemberList;

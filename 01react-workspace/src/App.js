@@ -1,77 +1,210 @@
+
+
+
+// useRef와 useEffect의 동시 사용 예제
+import React, {useEffect, useRef} from 'react'
+import Login from './Login'
 import './App.css';
-import UserList from './UserList';
-import ArrayAdd from './ArrayAdd';
-import React, {useRef, useState} from "react";
+
 
 function App(){
+  const inputRef = useRef()
 
-  const [inputs, setInputs] = useState({username: '', email:''});
-  const {username,email}=inputs;
+  useEffect(()=>{
+    console.log(inputRef)
+    inputRef.current.focus();
+  }, []
+  )
   
-  const onChange = e => {
-    // e.target은 onchange이벤트가 설정된 input태그를 가리킴
-    const {name, value} = e.target; 
-    setInputs({
-      ...inputs,
-      [name]: value
-    });
+  const loginAlert = () => {
+    alert(`환영합니다. ${inputRef.current.value}`)
+    inputRef.current.focus();
   }
 
-  const [users, setUsers] = useState([
-    {
-        id : 1, 
-        username : 'user1',
-        email : 'user1@naver.com'
-    },
-    {
-        id : 2, 
-        username : 'user2',
-        email : 'user2@naver.com'
-    },
-    {
-        id : 3, 
-        username : 'user3',
-        email : 'user3@naver.com'
-      }
-    ]);
-
-    const nextId = useRef(4)
-    const onCreate = ()=>{
-      const user = {
-        id: nextId.current,
-        username,
-        email
-      };
-
-      setUsers(users.concat(user))
-      setInputs({
-        username: '',
-        email : ''
-      })
-
-      nextId.current +=1
-
-    }
-
-    const onRemove = id => {
-      setUsers(users.filter(user => user.id !== id))
-    }
-
-
   return(
-    <>
-      <ArrayAdd
-      username={username}
-      email={email}
-      onChange={onChange}
-      onCreate={onCreate}/>
-
-      <UserList users={users} onRemove={onRemove}/>
-    </>
-    )
+    <div className="App">
+      <header className="App-header">
+        <input ref = {inputRef} type='text' placeholder='id'/>
+        <input type='text' placeholder='password'/>
+        <button onClick={loginAlert}>Login</button>
+      </header>
+    </div>
+  )
 }
 
 export default App;
+
+
+
+// import './App.css';
+// import MemberList from './MemberList';
+// import ArrayAdd from './ArrayAdd';
+// import React, {useRef, useState, useMemo} from "react";
+
+
+// function App(){
+//   function countActiveUsers(user){
+//     console.log("빨간색의 활성상태 유저명수 계산중...")
+//     return users.filter(user=> user.active).length;
+
+//     const [inputs, setInputs] = useState({username:'',email:''})
+//     const{username, email} =inputs;
+
+//     const handleInputChange = e => {
+//       const {name, value} = e.target;
+//       setInputs({
+//         ...inputs,
+//         [name]:value
+//       })
+//     }
+//     const [users, setUsers] = useState([
+//             {   id : 1, 
+//                 username : 'user1',
+//                 email : 'user1@naver.com',
+//                 active: true
+//             },
+//             {
+//                 id : 2, 
+//                 username : 'user2',
+//                 email : 'user2@naver.com',
+//                 active: false
+
+//             },
+//             {
+//                 id : 3, 
+//                 username : 'user3',
+//                 email : 'user3@naver.com',
+//                 active: false
+
+//               }
+
+//             ]);
+
+//             const nextId = useRef(4)
+//             const handleCreateClick = () =>{
+//               const user={
+//                 id: nextId.current, username, email
+//               }
+//               setUsers(users.concat(user))
+//               setInputs({
+//                 username:"",
+//                 email:""
+//               })
+
+//               nextId.current +=1;
+//             }
+//             const handleDeleteClick = id =>{
+//               setUsers(users.filter(user =>user.id!==id));
+
+//               const handleToggleClick = (id) => {
+//                 setUsers(users.map(user=>user.id===id?{...user, active: !user.active}:user))
+//               }
+//               const count = useMemo(()=>countActiveUsers(users),[users]);
+             
+//               return(
+//                 <>
+//                 <ArrayAdd username={username}
+//                 email={email}
+//                 onInputChange={onInputChange}
+//                 onCreateClick={onCreateClick}
+//                 />
+
+//                 <UserList propUsers={users} onDelete={handleDeleteClick} toggleClick={handleToggleClick}/>
+//                 <div> 활성사용자수 : {count} </div>
+//                 </>
+//               )
+//             }
+//   }
+// }
+
+// export default App;
+
+// // useEffect 예제2
+
+// function App(){
+
+//   return(
+//     <Number/>
+//   )
+// }
+
+// export default App;
+
+// function App(){
+
+//   function countActiveUsers(users){
+//     console.log("빨간색의 활성상태 유저명수 계산중...")
+//     return users.filter( user=>user.active).length;
+//   }
+
+//   const [inputs, setInputs] = useState({username: '', email:''});
+//   const {username,email}=inputs;
+  
+//   const onChange = e => {
+//     // e.target은 onchange이벤트가 설정된 input태그를 가리킴
+//     const {name, value} = e.target; 
+//     setInputs({
+//       ...inputs,
+//       [name]: value
+//     });
+//   }
+
+//   const [users, setUsers] = useState([
+//     {
+//         id : 1, 
+//         username : 'user1',
+//         email : 'user1@naver.com'
+//     },
+//     {
+//         id : 2, 
+//         username : 'user2',
+//         email : 'user2@naver.com'
+//     },
+//     {
+//         id : 3, 
+//         username : 'user3',
+//         email : 'user3@naver.com'
+//       }
+//     ]);
+
+//     const nextId = useRef(4)
+//     const onCreate = ()=>{
+//       const user = {
+//         id: nextId.current,
+//         username,
+//         email
+//       };
+
+//       setUsers(users.concat(user))
+//       setInputs({
+//         username: '',
+//         email : ''
+//       })
+
+//       nextId.current +=1
+
+//     }
+
+//     const onRemove = id => {
+//       setUsers(users.filter(user => user.id !== id))
+//     }
+
+//     const count = useMemo(() => countActiveUsers(users), [users]);
+//   return(
+//     <>
+//       <ArrayAdd
+//       username={username}
+//       email={email}
+//       onChange={onChange}
+//       onCreate={onCreate}/>
+
+//       <UserList users={users} onRemove={onRemove}/>
+//       <div> 활성사용자 수: {count}</div>
+//     </>
+//     )
+// }
+
+// export default App;
 
 
 
