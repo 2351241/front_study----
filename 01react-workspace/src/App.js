@@ -1,38 +1,51 @@
 
-
-
-// useRef와 useEffect의 동시 사용 예제
-import React, {useEffect, useRef} from 'react'
-import Login from './Login'
+// MathQuiz에 useRef와 useEffect의 동시 사용
+import React from 'react'
+import MathQuiz from './MathQuiz'
 import './App.css';
 
-
 function App(){
-  const inputRef = useRef()
 
-  useEffect(()=>{
-    console.log(inputRef)
-    inputRef.current.focus();
-  }, []
-  )
-  
-  const loginAlert = () => {
-    alert(`환영합니다. ${inputRef.current.value}`)
-    inputRef.current.focus();
-  }
 
   return(
-    <div className="App">
-      <header className="App-header">
-        <input ref = {inputRef} type='text' placeholder='id'/>
-        <input type='text' placeholder='password'/>
-        <button onClick={loginAlert}>Login</button>
-      </header>
-    </div>
+    <MathQuiz/>
+    
   )
 }
-
 export default App;
+
+// // useRef와 useEffect의 동시 사용 예제
+// import React, {useEffect, useRef} from 'react'
+// import Login from './Login'
+// import './App.css';
+
+
+// function App(){
+//   const inputRef = useRef()
+
+//   useEffect(()=>{
+//     console.log(inputRef)
+//     inputRef.current.focus();
+//   }, []
+//   )
+  
+//   const loginAlert = () => {
+//     alert(`환영합니다. ${inputRef.current.value}`)
+//     inputRef.current.focus();
+//   }
+
+//   return(
+//     <div className="App">
+//       <header className="App-header">
+//         <input ref = {inputRef} type='text' placeholder='id'/>
+//         <input type='text' placeholder='password'/>
+//         <button onClick={loginAlert}>Login</button>
+//       </header>
+//     </div>
+//   )
+// }
+
+// export default App;
 
 
 
