@@ -1,18 +1,46 @@
-
-// MathQuiz에 useRef와 useEffect의 동시 사용
-import React from 'react'
-import MathQuiz from './MathQuiz'
-import './App.css';
+import React from "react"
+import Game from './Game'
 
 function App(){
-
-
-  return(
-    <MathQuiz/>
-    
-  )
+  return(<Game/>)
 }
 export default App;
+
+
+// import React from "react"
+// import ReducerCounter from "./ReducerCounter"
+// import "./App.css";
+
+// function App(){
+
+//   return(
+//     <div>
+
+//     <ReducerCounter step={1} min={-3} max={5}/>
+//     <ReducerCounter step={5} min={-100} max={100}/>
+    
+//     </div>
+//     )
+
+// }
+
+// export default App;
+
+
+
+// // MathQuiz에 useRef와 useEffect의 동시 사용
+// import React from 'react'
+// import MathQuiz from './MathQuiz'
+// import './App.css';
+
+// function App(){
+//   return(
+//     <MathQuiz/>
+//   )
+// }
+// export default App;
+
+
 
 // // useRef와 useEffect의 동시 사용 예제
 // import React, {useEffect, useRef} from 'react'
