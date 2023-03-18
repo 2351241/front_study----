@@ -1,10 +1,10 @@
-import React from "react"
-import Game from './Game'
+// import React from "react"
+// import Game from './Game'
 
-function App(){
-  return(<Game/>)
-}
-export default App;
+// function App(){
+//   return(<Game/>)
+// }
+// export default App;
 
 
 // import React from "react"
@@ -159,6 +159,132 @@ export default App;
 // }
 
 // export default App;
+
+
+// [useReducer 함수로 UserList CreateUser구현]
+
+
+import React, {useMemo,useReducer,useRef,useCallback} from 'react';
+import UserList from "./UserList";
+import ArrayAdd from "./ArrayAdd";
+
+
+
+function countActiveusers(users){
+  console.log("활성 사용자수를 세는중...")
+  return users.filter(user=>user.active).length;
+}
+
+const initialState = {
+  inputs: {username:"", email:""},
+  users: [ { id: 1, username: 'user1', email: 'user1@gmail.com', active: true},
+   {id: 2, username: 'user2', email: 'user2@gmail.com', active: false},
+   {id: 3, username: 'user3', email: 'user3@gmail.com', active: false}
+  ]
+}
+
+  function reducer(state, action){
+    switch(action.type){
+      case 'CHANGE_INPUT':
+        return{...state, 
+                inputs:{...state.inputs, [action.name]: action.value}
+        }
+      case 'CREATE_USER':
+        return{inputs: initialState.inputs,
+               users: state.users.concat(action.user)
+        };
+      case 'TOGGLE_USER':
+        return{...state,
+                users: state.users.map(user=> 
+                  user.id===action.id?{...user, active:!user.active} : user)      
+        };
+      case 'REMOVE_USER':
+        return{...state, users: state.users.filter(user=>user.id !== action.id)};
+
+      default : 
+        return state;
+    };
+  }
+
+  
+  
+function App(){
+
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const nextId = useRef(4)
+  const {users} = state;
+  const {username, email} = state.inputs;
+
+
+  const handleInputChange = useCallback(e=>{
+    const {name, value} = e.target;
+    dispatch({
+      type: 'CHANGE_INPUT',
+      name,
+      value
+    })
+  }, 
+  [])
+  
+const handleCreateClick = useCallback(()=>{
+    dispatch({type: 'CREATE_USER',
+    user: {
+      id:nextId.current,
+      username,
+      email
+  }
+});
+  nextId.current+=1;
+}, [username, email]
+  )
+
+const handleToggleClick = useCallback(id => {
+  dispatch(
+    {type: 'TOGGLE_USER',
+    id }
+  )
+},[])
+
+
+const handleDeleteClick = useCallback(id => {
+  dispatch({
+    type: 'REMOVE_USER',
+    id
+  })
+},[])
+
+const count = useMemo(()=>countActiveusers(users))
+
+  return(
+      <>
+       <ArrayAdd
+          username={username}
+          email={email}
+          onInputChange={handleInputChange}
+          onCreateClick={handleCreateClick}/>
+        <UserList 
+          deleteClick={handleDeleteClick}
+          propUsers={users}
+          toggleClick={handleToggleClick}/>
+          <div> 활성사용자 명수 : {count}</div>
+      </>
+    )
+  }
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // useEffect 예제2
 
